@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RB_Stat_BodyWeightOffset>Muscle and Fat Offset</RB_Stat_BodyWeightOffset>
+  <RB_Stat_CapacityMult>Multiplier for muscle strength: x</RB_Stat_CapacityMult>
+  <RB_Stat_MuscleFatMult>Multiplier for muscle and fat: x</RB_Stat_MuscleFatMult>
+  <RB_Stat_FatHinderanceMult>Multiplier for body fat: x</RB_Stat_FatHinderanceMult>
+  <RB_Stat_MuscleFatTempOffset>Offset for muscle and fat: </RB_Stat_MuscleFatTempOffset>
+</LanguageData>
