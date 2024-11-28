@@ -9,7 +9,7 @@ using Verse;
 
 namespace Rimbody_StatModule
 {
-    [HarmonyPatchCategory("NonCE")]
+    [HarmonyPatchCategory("NonCE")] //Only needed for Non-CE because CE overtakes this with its own CE_StatDefOf.CarryWeight
     [HarmonyPatch(typeof(MassUtility), "Capacity")]
     static class Rimbody_NonCE_MassUtility_Patch
     {
@@ -32,10 +32,10 @@ namespace Rimbody_StatModule
     {
         static bool Prefix(ref float __result, Need_Food __instance)
         {
-            var pawnField = typeof(Need).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
-            var pawn = (Pawn)pawnField.GetValue(__instance);
-            if (pawn?.needs?.food.Starving == true)
+            if (__instance.Starving == true)
             {
+                var pawnField = typeof(Need).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
+                var pawn = (Pawn)pawnField.GetValue(__instance);
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
                 if (compPhysique != null)
                 {

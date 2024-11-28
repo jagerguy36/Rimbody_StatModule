@@ -100,7 +100,7 @@ namespace Maux36.Rimbody_StatModule
             return 1.0f + ((compPhysique.MuscleMass - 25f) * 3f / 500f);
         }
     }
-    public class PhysiqueMuscleResistancePart : StatPart// -M 0.85 ~ 1.15
+    public class PhysiqueMassResistancePart : StatPart// -M 0.85 ~ 1.15
     {
         public override void TransformValue(StatRequest req, ref float val)
         {
@@ -121,7 +121,7 @@ namespace Maux36.Rimbody_StatModule
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
                 if (compPhysique != null)
                 {
-                    return "RB_Stat_CapacityMult".Translate() + MuscleStrengthMultiplier(compPhysique).ToStringPercent();
+                    return "RB_Stat_MuscleFatMult".Translate() + MuscleStrengthMultiplier(compPhysique).ToStringPercent();
                 }
             }
             return null;
@@ -129,7 +129,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float MuscleStrengthMultiplier(CompPhysique compPhysique)
         {
-            return 1.0f - ((compPhysique.MuscleMass - 25f) * 3f / 500f);
+            return 1f - (((2f * compPhysique.MuscleMass) + compPhysique.BodyFat - 75f) * 2f / 1000f);
         }
     }
 
