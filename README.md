@@ -15,7 +15,7 @@ ComfyTemperatureMax | -Muscle, -2*Fat | -3 ~ 3
 MoveSpeed | -Fat | x 0.85 ~ 1.15
 Crawl Speed | -Fat |  x 0.85 ~ 1.15
 Melee Damage Factor | Muscle | x 0.85 ~ 1.15
-Stagger Duration | -Muscle | x 0.85 ~ 1.15
+Stagger Duration | -2*Muscle, -Fat | x 0.85 ~ 1.15
 Mining Speed | Muscle | x 0.85 ~ 1.15
 Smoothing Speed | Muscle | x 0.85 ~ 1.15
 Planting Speed | Muscle | x 0.85 ~ 1.15
