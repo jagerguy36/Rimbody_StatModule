@@ -1,6 +1,14 @@
 # Rimbody_StatModule
- Stat module for Rimbody, a rimworld mod
+Stat Module for Rimbody, a RimWorld Mod. This module integrates Rimbody’s Muscle Mass and Body Fat into pawns' stats.
 
+## Features
+ * Muscle is mostly beneficial to the stats, as most work needs muscle, and you don't gain muscle easily.
+ * Fat is not so beneficial, but high fat will come in handy when you are starving, and having low fat can be deadly when you have no food.
+ * Rimbody is also designed so that Fat helps pawns keep their muscle (bodyfat lowers muscle loss), so having a moderate, healthy amount of fat can be beneficial.
+
+## Detailed Stats
+
+### Vanilla
 Stat | Relevant Info | Number
 --- | --- | ---
 Mass | Muscle, Fat | 40kg~110kg
@@ -24,7 +32,7 @@ Deepdrill Speed | Muscle | x 0.85 ~ 1.15
 Malnutrition progress | -Fat | x0.5 ~ x1.2
 
 
-CE stats
+### Combat Extended
 Stat | Relevant Info | Number
 --- | --- | ---
 CarryWeight | Muscle | x 0.75 ~ 1.25
@@ -33,7 +41,7 @@ UnarmedDamage | Muscle | x 0.85 ~ 1.15
 MeleeParryChance | Muscle |  x 0.85 ~ 1.15
 
 
-Stats not directly affected
+### Stats not directly affected
 Stat | Reason 
 --- | ---
 Dodge Chance | Affected by movement, which is already affected by muscle/fat
