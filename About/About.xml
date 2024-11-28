@@ -23,5 +23,10 @@
     </modDependencies>
     <packageId>Maux36.Rimbody.statmodule</packageId>
     <description># Rimbody_StatModule
- Stat module for Rimbody, a rimworld mod</description>
+Stat Module for Rimbody, a RimWorld Mod. This module integrates Rimbody’s Muscle Mass and Body Fat into pawns' stats.
+
+## Features
+ * Muscle is mostly beneficial to the stats, as most work needs muscle, and you don't gain muscle easily.
+ * Fat is not so beneficial, but high fat will come in handy when you are starving, and having low fat can be deadly when you have no food.
+ * Rimbody is also designed so that Fat helps pawns keep their muscle (bodyfat lowers muscle loss), so having a moderate, healthy amount of fat can be beneficial.</description>
 </ModMetaData>
