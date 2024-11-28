@@ -31,3 +31,11 @@ CarryWeight | Muscle | x 0.75 ~ 1.25
 CarryBulk | Muscle | x 0.75 ~ 1.25
 UnarmedDamage | Muscle | x 0.85 ~ 1.15
 MeleeParryChance | Muscle |  x 0.85 ~ 1.15
+
+
+Stats not directly affected
+Stat | Reason 
+--- | ---
+Dodge Chance | Affected by movement, which is already affected by muscle/fat
+Hunting Stealth | Affected by movement, which is already affected by muscle/fat
+Hunger Rate | Not a stat. Raising Max nutrition should emulate needing higher amount of food better.
