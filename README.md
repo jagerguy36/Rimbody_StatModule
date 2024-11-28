@@ -21,6 +21,7 @@ Smoothing Speed | Muscle | x 0.85 ~ 1.15
 Planting Speed | Muscle | x 0.85 ~ 1.15
 Construction Speed | Muscle | x 0.85 ~ 1.15
 Deepdrill Speed | Muscle | x 0.85 ~ 1.15
+Malnutrition progress | -Fat | x0.5 ~ x1.2
 
 
 CE stats
