@@ -94,14 +94,24 @@
       </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "CrawlSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "CrawlSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "CrawlSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueFatHinderancePart"/>
-        </parts>
-      </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "CrawlSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueFatHinderancePart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
@@ -127,63 +137,124 @@
       </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "StaggerDurationFactor"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "StaggerDurationFactor"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "StaggerDurationFactor"]</xpath>
+        <order>Prepend</order>
+        <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueMassResistancePart"/>
-        </parts>
-      </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "StaggerDurationFactor"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMassResistancePart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
   
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "MiningSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "MiningSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "MiningSpeed"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-        </parts>
-      </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "MiningSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "SmoothingSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "SmoothingSpeed"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
+          <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "SmoothingSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "PlantWorkSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "PlantWorkSpeed"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
+          <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "PlantWorkSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
   
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "SmoothingSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "ConstructionSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "ConstructionSpeed"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-        </parts>
-      </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "ConstructionSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
   
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "PlantWorkSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "DeepDrillingSpeed"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "DeepDrillingSpeed"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-        </parts>
-      </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "DeepDrillingSpeed"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
   
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "ConstructionSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
-          <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-        </parts>
-      </value>
-  </Operation>
-  
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "DeepDrillingSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
-          <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-        </parts>
-      </value>
-  </Operation>
 </Patch>

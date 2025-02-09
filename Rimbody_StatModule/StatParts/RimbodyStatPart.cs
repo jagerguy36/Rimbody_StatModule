@@ -11,7 +11,8 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null) {
+                if (compPhysique?.BodyFat>=0 && compPhysique?.MuscleMass >= 0)
+                {
                     val *= CorpulentMultiplier(compPhysique);
                 }
             }
@@ -22,7 +23,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatMult".Translate() + CorpulentMultiplier(compPhysique).ToStringPercent();
                 }
@@ -43,7 +44,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= CapacityMultiplier(compPhysique);
                 }
@@ -55,7 +56,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_CapacityMult".Translate() + CapacityMultiplier(compPhysique).ToStringPercent();
                 }
@@ -75,7 +76,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= MuscleStrengthMultiplier(compPhysique);
                 }
@@ -87,7 +88,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_CapacityMult".Translate() + MuscleStrengthMultiplier(compPhysique).ToStringPercent();
                 }
@@ -107,7 +108,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= MuscleStrengthMultiplier(compPhysique);
                 }
@@ -119,7 +120,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatMult".Translate() + MuscleStrengthMultiplier(compPhysique).ToStringPercent();
                 }
@@ -140,7 +141,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= FatHinderanceMultiplier(compPhysique);
                 }
@@ -152,7 +153,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_FatHinderanceMult".Translate() + FatHinderanceMultiplier(compPhysique).ToStringPercent();
                 }
@@ -173,7 +174,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= ArrestChanceMultiplier(compPhysique);
                 }
@@ -185,7 +186,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatMult".Translate() + ArrestChanceMultiplier(compPhysique).ToStringPercent();
                 }
@@ -205,7 +206,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val *= ConsumptionMultiplier(compPhysique);
                 }
@@ -217,7 +218,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatMult".Translate() + ConsumptionMultiplier(compPhysique).ToStringPercent();
                 }
@@ -237,7 +238,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val += TemperatureOffset(compPhysique);
                 }
@@ -249,7 +250,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatTempOffset".Translate() + TemperatureOffset(compPhysique).ToStringTemperatureOffset();
                 }
@@ -269,7 +270,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     val += TemperatureOffset(compPhysique);
                 }
@@ -282,7 +283,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.TryGetComp<CompPhysique>();
-                if (compPhysique != null)
+                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatTempOffset".Translate() + TemperatureOffset(compPhysique).ToStringTemperatureOffset();
                 }
