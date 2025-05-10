@@ -24,13 +24,24 @@
       </parts>
     </value>
   </Operation>
-  
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "MeleeParryChance"]</xpath>
-    <value>
-      <parts>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>*/StatDef[defName = "MeleeParryChance"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "MeleeParryChance"]/parts</xpath>
+        <order>Prepend</order>
+        <value>
         <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
-      </parts>
-    </value>
+        </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>*/StatDef[defName = "MeleeParryChance"]</xpath>
+        <order>Prepend</order>
+        <value>
+          <parts>
+            <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
+          </parts>
+        </value>
+    </nomatch>
   </Operation>
 </Patch>

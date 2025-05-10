@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
 using Maux36.Rimbody;
-using Maux36.Rimbody_CE;
-using Maux36.Rimbody_StatModule;
 using RimWorld;
 using System.Reflection;
 using UnityEngine;
