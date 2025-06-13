@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="Rimbody">
       <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\DEV_Rimbody\1.5\Assemblies\Rimbody.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

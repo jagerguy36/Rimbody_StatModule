@@ -32,12 +32,13 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
+<!--   <Operation Class="PatchOperationAdd">
     <xpath>*/StatDef[defName = "CarryingCapacity"]/parts</xpath>
     <value>
       <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleCapacityPart"/>
     </value>
-  </Operation>
+  </Operation> -->
+  <!-- CarryingCapacity is about the volume, not the weight. It interacts with stacksize rather. We should ignore this -->
 
   <Operation Class="PatchOperationAdd">
     <xpath>*/StatDef[defName = "ArrestSuccessChance"]/parts</xpath>

@@ -7,7 +7,7 @@ using Verse;
 
 namespace Rimbody_StatModule
 {
-    [HarmonyPatchCategory("NonCE")] //Only needed for Non-CE because CE overtakes this with its own CE_StatDefOf.CarryWeight
+    [HarmonyPatchCategory("NonCE")] //Only needed for Non-CE because CE overtakes this with its own CE_StatDefOf.CarryWeight which gets patched via patchoperation
     [HarmonyPatch(typeof(MassUtility), "Capacity")]
     static class Rimbody_NonCE_MassUtility_Patch
     {
@@ -15,7 +15,7 @@ namespace Rimbody_StatModule
         {
             if (__result != 0)
             {
-                var compPhysique = p?.TryGetComp<CompPhysique>();
+                var compPhysique = p.compPhysique();
                 if (compPhysique != null)
                 {
                     var multiplier = 0.75f + (compPhysique.MuscleMass / 100f);
@@ -34,7 +34,7 @@ namespace Rimbody_StatModule
             {
                 var pawnField = typeof(Need).GetField("pawn", BindingFlags.NonPublic | BindingFlags.Instance);
                 var pawn = (Pawn)pawnField.GetValue(__instance);
-                var compPhysique = pawn.TryGetComp<CompPhysique>();
+                var compPhysique = pawn.compPhysique();
                 if (compPhysique != null)
                 {
                     __result = 0.0011325f * (1.2f - (0.7f * Mathf.Pow(compPhysique.BodyFat / 50, 2)));
