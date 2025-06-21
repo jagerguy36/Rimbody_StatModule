@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,20 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.3.6\lib\net48\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CombatExtended_RimbodyPatch">
-      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\Rimbody\Mods\CombatExtended\1.5\Assemblies\CombatExtended_RimbodyPatch.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Rimbody">
-      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\DEV_Rimbody\1.5\Assemblies\Rimbody.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\DEV_Rimbody\1.6\Assemblies\Rimbody.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -63,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HarmonyInit.cs" />
+    <Compile Include="HarmonyPatches\NutritionExplanation_Transpiler.cs" />
     <Compile Include="HarmonyPatches\StatHarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rimbody_StatModule.cs" />

@@ -32,14 +32,6 @@
     </value>
   </Operation>
 
-<!--   <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "CarryingCapacity"]/parts</xpath>
-    <value>
-      <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleCapacityPart"/>
-    </value>
-  </Operation> -->
-  <!-- CarryingCapacity is about the volume, not the weight. It interacts with stacksize rather. We should ignore this -->
-
   <Operation Class="PatchOperationAdd">
     <xpath>*/StatDef[defName = "ArrestSuccessChance"]/parts</xpath>
     <value>
@@ -58,34 +50,6 @@
         </value>
     </nomatch>
   </Operation>
-
-<!--   <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Combat Extended</li>
-    </mods>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>*/StatDef[defName = "MoveSpeed"]/parts</xpath>
-      <order>Prepend</order>
-      <value>
-        <li Class="Maux36.Rimbody_StatModule.PhysiquFatHinderancePart"/>
-      </value>
-    </nomatch>
-  </Operation>
-
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Combat Extended</li>
-    </mods>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>*/StatDef[defName = "CrawlSpeed"]</xpath>
-      <order>Prepend</order>
-      <value>
-        <parts>
-          <li Class="Maux36.Rimbody_StatModule.PhysiquFatHinderancePart"/>
-        </parts>
-      </value>
-    </nomatch>
-  </Operation> -->
 
   <Operation Class="PatchOperationAdd">
     <xpath>*/StatDef[defName = "MoveSpeed"]/parts</xpath>

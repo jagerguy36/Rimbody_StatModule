@@ -33,7 +33,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float CorpulentMultiplier(CompPhysique compPhysique)
         {
-            return ((0.7f * (compPhysique.MuscleMass + compPhysique.BodyFat)) + 40f) / 80f;
+            return ((0.7f * (compPhysique.MuscleMass + compPhysique.BodyFat)) + 40f) * 0.0125f;
         }
     }
 
@@ -66,7 +66,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float CapacityMultiplier(CompPhysique compPhysique)
         {
-            return 0.75f + (compPhysique.MuscleMass / 100f);
+            return 0.75f + (compPhysique.MuscleMass * 0.01f);
         }
     }
     public class PhysiqueMuscleStrengthPart : StatPart// M 0.85 ~ 1.15
@@ -98,7 +98,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float MuscleStrengthMultiplier(CompPhysique compPhysique)
         {
-            return 1.0f + ((compPhysique.MuscleMass - 25f) * 3f / 500f);
+            return 1.0f + ((compPhysique.MuscleMass - 25f) * 0.006f);
         }
     }
     public class PhysiqueMassResistancePart : StatPart// -M 0.85 ~ 1.15
@@ -130,7 +130,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float MuscleStrengthMultiplier(CompPhysique compPhysique)
         {
-            return 1f - (((2f * compPhysique.MuscleMass) + compPhysique.BodyFat - 75f) * 2f / 1000f);
+            return 1f - (((2f * compPhysique.MuscleMass) + compPhysique.BodyFat - 75f) * 0.002f);
         }
     }
 
@@ -163,7 +163,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float FatHinderanceMultiplier(CompPhysique compPhysique)
         {
-            return 1.0f + ((25f-compPhysique.BodyFat)*3f/500f);
+            return 1.0f + ((25f-compPhysique.BodyFat)*0.006f);
         }
     }
 
@@ -196,7 +196,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float ArrestChanceMultiplier(CompPhysique compPhysique)
         {
-            return 1f + (((2f * compPhysique.MuscleMass) + compPhysique.BodyFat - 75f) * 4f / 1000f);
+            return 1f + (((2f * compPhysique.MuscleMass) + compPhysique.BodyFat - 75f) * 0.004f);
         }
     }
     public class Physique1M1FPart : StatPart// M,F 0.8 ~ 1.2
@@ -228,7 +228,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float ConsumptionMultiplier(CompPhysique compPhysique)
         {
-            return 1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 4f / 1000f);
+            return 1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f);
         }
     }
     public class PhysiqueTemperatureMinPart : StatPart // M,2F 6 ~ -6
@@ -260,7 +260,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float TemperatureOffset(CompPhysique compPhysique)
         {
-            return -(compPhysique.MuscleMass + (2f * compPhysique.BodyFat) - 75f) * 8f / 100f;
+            return -(compPhysique.MuscleMass + (2f * compPhysique.BodyFat) - 75f) * 0.08f;
         }
     }
     public class PhysiqueTemperatureMaxPart : StatPart // M,2F 3 ~ -3
@@ -293,7 +293,7 @@ namespace Maux36.Rimbody_StatModule
 
         private float TemperatureOffset(CompPhysique compPhysique)
         {
-            return -(compPhysique.MuscleMass + (2f * compPhysique.BodyFat) - 75f) * 4f / 100f;
+            return -(compPhysique.MuscleMass + (2f * compPhysique.BodyFat) - 75f) * 0.04f;
         }
     }
 }

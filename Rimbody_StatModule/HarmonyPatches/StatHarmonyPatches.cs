@@ -41,4 +41,17 @@ namespace Rimbody_StatModule
             return true;
         }
     }
+
+    [HarmonyPatch(typeof(Need_Food), "FoodFallPerTickAssumingCategory")]
+    static class BaseHungerRatePatch
+    {
+        static void Postfix(ref float __result, Pawn ___pawn)
+        {
+            var compPhysique = ___pawn.compPhysique();
+            if (compPhysique?.MuscleMass >= 0 && compPhysique.BodyFat >= 0)
+            {
+                __result = __result * (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f));
+            }
+        }
+    }
 }
