@@ -105,7 +105,7 @@
   <Operation Class="PatchOperationConditional">
     <xpath>*/StatDef[defName = "StaggerDurationFactor"]/parts</xpath>
     <match Class="PatchOperationAdd">
-      <xpath>*/StatDef[defName = "StaggerDurationFactor"]</xpath>
+      <xpath>*/StatDef[defName = "StaggerDurationFactor"]/parts</xpath>
         <order>Prepend</order>
         <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueMassResistancePart"/>
