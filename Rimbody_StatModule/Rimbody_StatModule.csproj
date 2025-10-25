@@ -70,4 +70,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo Cleaning old mod files...
+
+:: Delete the old mod files
+rd /s /q "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule"
+
+:: Copy the new files and folders
+xcopy /e /i /h /y "$(ProjectDir)..\1.5" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.5"
+xcopy /e /i /h /y "$(ProjectDir)..\1.6" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.6"
+xcopy /e /i /h /y "$(ProjectDir)..\About" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\About"
+copy /y "$(ProjectDir)..\LoadFolders.xml" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\LoadFolders.xml"
+xcopy /e /i /h /y "$(ProjectDir)..\Common" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\Common"
+xcopy /e /i /h /y "$(ProjectDir)..\Mods" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\Mods"
+echo Mod files have been successfully copied!
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
