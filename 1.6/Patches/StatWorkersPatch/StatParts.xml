@@ -62,7 +62,7 @@
   <Operation Class="PatchOperationConditional">
     <xpath>*/StatDef[defName = "CrawlSpeed"]/parts</xpath>
     <match Class="PatchOperationAdd">
-      <xpath>*/StatDef[defName = "CrawlSpeed"]</xpath>
+      <xpath>*/StatDef[defName = "CrawlSpeed"]/parts</xpath>
         <order>Prepend</order>
         <value>
           <li Class="Maux36.Rimbody_StatModule.PhysiqueFatHinderancePart"/>
