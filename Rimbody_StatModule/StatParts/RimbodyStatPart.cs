@@ -11,7 +11,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat>=0 && compPhysique?.MuscleMass >= 0)
+                if (compPhysique?.BodyFat>=0 && compPhysique.MuscleMass >= 0)
                 {
                     val *= CorpulentMultiplier(compPhysique);
                 }
@@ -23,7 +23,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
+                if (compPhysique?.BodyFat >= 0 && compPhysique.MuscleMass >= 0)
                 {
                     return "RB_Stat_MuscleFatMult".Translate() + CorpulentMultiplier(compPhysique).ToStringPercent();
                 }
@@ -31,7 +31,7 @@ namespace Maux36.Rimbody_StatModule
             return null;
         }
 
-        private float CorpulentMultiplier(CompPhysique compPhysique)
+        private static float CorpulentMultiplier(CompPhysique compPhysique)
         {
             return ((0.7f * (compPhysique.MuscleMass + compPhysique.BodyFat)) + 40f) * 0.0125f;
         }
@@ -44,7 +44,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
+                if (compPhysique?.BodyFat >= 0 && compPhysique.MuscleMass >= 0)
                 {
                     val *= CapacityMultiplier(compPhysique);
                 }
@@ -56,7 +56,7 @@ namespace Maux36.Rimbody_StatModule
             if (req.HasThing && req.Thing is Pawn pawn)
             {
                 var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat >= 0 && compPhysique?.MuscleMass >= 0)
+                if (compPhysique?.BodyFat >= 0 && compPhysique.MuscleMass >= 0)
                 {
                     return "RB_Stat_CapacityMult".Translate() + CapacityMultiplier(compPhysique).ToStringPercent();
                 }
