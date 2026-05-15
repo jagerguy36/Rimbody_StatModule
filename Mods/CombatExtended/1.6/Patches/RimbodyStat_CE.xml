@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "CarryWeight"]/parts</xpath>
-    <order>Prepend</order>
+  <Operation Class="PatchOperationInsert">
+    <xpath>/Defs/StatDef[defName="CarryWeight"]/parts/li[@Class="StatPart_Bodysize"]</xpath>
+    <order>Append</order>
+    <value>
+      <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleCapacityPart"/>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationInsert">
+    <xpath>/Defs/StatDef[defName = "CarryBulk"]/parts/li[@Class="StatPart_Bodysize"]</xpath>
+    <order>Append</order>
     <value>
       <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleCapacityPart"/>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "CarryBulk"]/parts</xpath>
-    <order>Prepend</order>
-    <value>
-      <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleCapacityPart"/>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationAdd">
-    <xpath>*/StatDef[defName = "UnarmedDamage"]</xpath>
+    <xpath>/Defs/StatDef[defName = "UnarmedDamage"]</xpath>
     <value>
       <parts>
         <li Class="Maux36.Rimbody_StatModule.PhysiqueMuscleStrengthPart"/>
@@ -26,7 +26,7 @@
   </Operation>
 
   <Operation Class="PatchOperationConditional">
-    <xpath>*/StatDef[defName = "MeleeParryChance"]/parts</xpath>
+    <xpath>/Defs/StatDef[defName = "MeleeParryChance"]/parts</xpath>
     <match Class="PatchOperationAdd">
       <xpath>*/StatDef[defName = "MeleeParryChance"]/parts</xpath>
         <order>Prepend</order>
@@ -35,7 +35,7 @@
         </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>*/StatDef[defName = "MeleeParryChance"]</xpath>
+      <xpath>/Defs/StatDef[defName = "MeleeParryChance"]</xpath>
         <order>Prepend</order>
         <value>
           <parts>
