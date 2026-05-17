@@ -37,38 +37,6 @@ namespace Maux36.Rimbody_StatModule
         }
     }
 
-    public class PhysiqueMuscleCapacityPart : StatPart // M 0.75~1.25
-    {
-        public override void TransformValue(StatRequest req, ref float val)
-        {
-            if (req.HasThing && req.Thing is Pawn pawn)
-            {
-                var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat >= 0 && compPhysique.MuscleMass >= 0)
-                {
-                    val *= CapacityMultiplier(compPhysique);
-                }
-            }
-        }
-
-        public override string ExplanationPart(StatRequest req)
-        {
-            if (req.HasThing && req.Thing is Pawn pawn)
-            {
-                var compPhysique = pawn.compPhysique();
-                if (compPhysique?.BodyFat >= 0 && compPhysique.MuscleMass >= 0)
-                {
-                    return "RB_Stat_CapacityMult".Translate() + CapacityMultiplier(compPhysique).ToStringPercent();
-                }
-            }
-            return null;
-        }
-
-        private float CapacityMultiplier(CompPhysique compPhysique)
-        {
-            return 0.75f + (compPhysique.MuscleMass * 0.01f);
-        }
-    }
     public class PhysiqueMuscleStrengthPart : StatPart// M 0.85 ~ 1.15
     {
         public override void TransformValue(StatRequest req, ref float val)

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <PawnCapacityDef>
+    <defName>Rimbody_Brawn</defName>
+    <label>muscle strength</label>
+    <listOrder>115</listOrder>
+    <workerClass>Rimbody_StatModule.PawnCapacityWorker_Brawn</workerClass>
+    <zeroIfCannotBeAwake>false</zeroIfCannotBeAwake>
+    <lethalFlesh>false</lethalFlesh>
+    <lethalMechanoids>false</lethalMechanoids>
+    <showOnHumanlikes>false</showOnHumanlikes>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnCaravanHealthTab>false</showOnCaravanHealthTab>
+  </PawnCapacityDef>
+</Defs>

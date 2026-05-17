@@ -17,8 +17,7 @@ namespace Rimbody_StatModule
                 var compPhysique = p.compPhysique();
                 if (compPhysique != null)
                 {
-                    var multiplier = 0.75f + (compPhysique.MuscleMass / 100f);
-                    __result = __result * multiplier;
+                    __result += (compPhysique.brawn - 1f)*30f;
                 }
             }
         }
