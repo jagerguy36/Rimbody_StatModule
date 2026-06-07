@@ -15,7 +15,11 @@ namespace Rimbody_StatModule
             {
                 Log.Message($"Rimbody StatModule Loaded");
                 harmony.PatchAllUncategorized(Assembly.GetExecutingAssembly());
-                if (!ModsConfig.IsActive("ceteam.combatextended"))
+                if (ModsConfig.IsActive("ceteam.combatextended"))
+                {
+                    Log.Message($"Rimbody StatModule detected CE.");
+                }
+                else
                 {
                     Log.Message($"Rimbody StatModule didn't detect CE.");
                     harmony.PatchCategory("NonCE");
