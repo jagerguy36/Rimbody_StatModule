@@ -11,7 +11,7 @@ namespace Rimbody_StatModule
         public Rimbody_StatModule(ModContentPack content) : base(content)
         {
             currentVersion = content.ModMetaData.ModVersion;
-            var RimbodyModData = ModLister.GetActiveModWithIdentifier("Maux36.Rimbody");
+            var RimbodyModData = ModLister.GetActiveModWithIdentifier("Maux36.Rimbody", ignorePostfix: true);
             if (RimbodyModData == null)
             {
                 Log.Error("[Rimbody - Stat Module] Stats module could not find its required dependency: Rimbody. This is a critical component, and your game will not work without it.");
