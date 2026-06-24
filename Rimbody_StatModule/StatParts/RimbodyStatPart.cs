@@ -36,6 +36,61 @@ namespace Maux36.Rimbody_StatModule
             return ((0.7f * (compPhysique.MuscleMass + compPhysique.BodyFat)) + 40f) * 0.0125f;
         }
     }
+    public class PhysiqueBrawnWeightCapacityPart : StatPart // M 
+    {
+        public override void TransformValue(StatRequest req, ref float val)
+        {
+            if (req.HasThing && req.Thing is Pawn pawn)
+            {
+                var compPhysique = pawn.compPhysique();
+                if (compPhysique?.HasPhysique == true)
+                {
+                    val += 30f * (compPhysique.brawn - 1f);
+                }
+            }
+        }
+
+        public override string ExplanationPart(StatRequest req)
+        {
+            if (req.HasThing && req.Thing is Pawn pawn)
+            {
+                var compPhysique = pawn.compPhysique();
+                if (compPhysique?.HasPhysique == true)
+                {
+                    return "RB_Stat_CapacityOffset".Translate() + (30f * (compPhysique.brawn - 1f)).ToStringWithSign();
+                }
+            }
+            return null;
+        }
+    }
+
+    public class PhysiqueBrawnBulkCapacityPart : StatPart // M 
+    {
+        public override void TransformValue(StatRequest req, ref float val)
+        {
+            if (req.HasThing && req.Thing is Pawn pawn)
+            {
+                var compPhysique = pawn.compPhysique();
+                if (compPhysique?.HasPhysique == true)
+                {
+                    val += 10f * (compPhysique.brawn - 1f);
+                }
+            }
+        }
+
+        public override string ExplanationPart(StatRequest req)
+        {
+            if (req.HasThing && req.Thing is Pawn pawn)
+            {
+                var compPhysique = pawn.compPhysique();
+                if (compPhysique?.HasPhysique == true)
+                {
+                    return "RB_Stat_CapacityOffset".Translate() + (10f * (compPhysique.brawn - 1f)).ToStringWithSign();
+                }
+            }
+            return null;
+        }
+    }
 
     public class PhysiqueMuscleStrengthPart : StatPart// M 0.85 ~ 1.15
     {

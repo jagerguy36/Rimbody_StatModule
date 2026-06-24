@@ -58,10 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Brawn\PawnCapacityWorker_Brawn.cs" />
-    <Compile Include="DefOfRimbodyStats.cs" />
     <Compile Include="HarmonyInit.cs" />
-    <Compile Include="Brawn\CapacityUtilityPatch.cs" />
     <Compile Include="HarmonyPatches\NutritionExplanation_Transpiler.cs" />
     <Compile Include="HarmonyPatches\StatHarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

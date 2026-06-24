@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using System;
+using Maux36.Rimbody;
 using System.Reflection;
 using Verse;
 

@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/StatDef[defName="CarryWeight"]</xpath>
+  <Operation Class="PatchOperationInsert">
+    <xpath>/Defs/StatDef[defName="CarryWeight"]/parts/li[@Class="StatPart_Bodysize"]</xpath>
+    <order>Prepend</order>
     <value>
-      <capacityOffsets>
-        <li>
-          <capacity>Rimbody_Brawn</capacity>
-          <scale>30</scale>
-        </li>
-    </capacityOffsets>
+      <li Class="Maux36.Rimbody_StatModule.PhysiqueBrawnWeightCapacityPart"/>
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/StatDef[defName = "CarryBulk"]</xpath>
+  <Operation Class="PatchOperationInsert">
+    <xpath>/Defs/StatDef[defName = "CarryBulk"]/parts/li[@Class="StatPart_Bodysize"]</xpath>
+    <order>Prepend</order>
     <value>
-      <capacityOffsets>
-        <li>
-          <capacity>Rimbody_Brawn</capacity>
-          <scale>10</scale>
-        </li>
-    </capacityOffsets>
+      <li Class="Maux36.Rimbody_StatModule.PhysiqueBrawnBulkCapacityPart"/>
     </value>
   </Operation>
 
