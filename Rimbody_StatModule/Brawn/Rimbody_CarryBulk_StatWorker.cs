@@ -6,7 +6,6 @@ namespace Rimbody_StatModule
 {
     public class Rimbody_CarryBulk_StatWorker : StatWorker
     {
-        public float Offset = 0f;
         public override float GetBaseValueFor(StatRequest req)
         {
             Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
