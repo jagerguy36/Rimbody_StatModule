@@ -8,9 +8,9 @@ namespace Rimbody_StatModule
     {
         public override float GetBaseValueFor(StatRequest req)
         {
-            Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
             float result = base.GetBaseValueFor(req);
-            var compPhysique = pawn?.compPhysique;
+            Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
+            var compPhysique = pawn?.compPhysique();
             if (compPhysique?.HasPhysique == true)
             {
                 result += (compPhysique.brawn - 1f)*30f;
