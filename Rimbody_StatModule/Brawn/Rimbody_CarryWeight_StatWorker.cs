@@ -24,7 +24,7 @@ namespace Rimbody_StatModule
             var compPhysique = pawn?.compPhysique;
             if (compPhysique?.HasPhysique == true)
             {
-                result += += (compPhysique.brawn - 1f)*30f;
+                result += (compPhysique.brawn - 1f)*30f;
             }
             return result;
         }
