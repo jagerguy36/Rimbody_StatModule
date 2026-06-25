@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/StatDef[defName="CarryWeight"]</xpath>
-    <value>
-      <capacityOffsets>
-        <li>
-          <capacity>Rimbody_Brawn</capacity>
-          <scale>30</scale>
-        </li>
-    </capacityOffsets>
-    </value>
-  </Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[defName="CarryWeight"]</xpath>
+		<value>
+			<workerClass>CombatExtended.Rimbody_CarryWeight_StatWorker</workerClass>
+		</value>
+	</Operation>
 
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/StatDef[defName = "CarryBulk"]</xpath>
-    <value>
-      <capacityOffsets>
-        <li>
-          <capacity>Rimbody_Brawn</capacity>
-          <scale>10</scale>
-        </li>
-    </capacityOffsets>
-    </value>
+		<value>
+			<workerClass>CombatExtended.Rimbody_CarryBulk_StatWorker</workerClass>
+		</value>
   </Operation>
 
   <Operation Class="PatchOperationAdd">

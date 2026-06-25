@@ -10,46 +10,36 @@ namespace Rimbody_StatModule
     {
         public override float GetValueUnfinalized(StatRequest req, bool applyPostProcess = true)
         {
-            var thing = req.Thing;
-            if (thing == null)
+            Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
+            if (req.Thing is Corpse corpse)
             {
-                return base.GetValueUnfinalized(req, applyPostProcess);
+                pawn = corpse.InnerPawn;
             }
-
-            if (thing.def.IsCorpse)
+            var compPhysique = pawn?.compPhysique();
+            if (compPhysique?.HasPhysique == true)
             {
-                thing = (thing as Corpse)?.InnerPawn;
+                float value = Mathf.RoundToInt((0.7f * (compPhysique.BodyFat + compPhysique.MuscleMass)) - 20f);
+                return base.GetValueUnfinalized(req, applyPostProcess) + value;
             }
-
-            var compPhysique = thing.TryGetComp<CompPhysique>();
-            return compPhysique != null
-                ? base.GetValueUnfinalized(req, applyPostProcess) + Mathf.RoundToInt((0.7f * (compPhysique.BodyFat + compPhysique.MuscleMass)) - 20f)
-                : base.GetValueUnfinalized(req, applyPostProcess);
+            return base.GetValueUnfinalized(req, applyPostProcess);
         }
 
         public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
         {
-            var stringBuilder = new StringBuilder();
-            var thing = req.Thing;
-            if (thing == null)
+            string baseExpl = base.GetExplanationUnfinalized(req, numberSense);
+            Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
+            if (req.Thing is Corpse corpse)
             {
-                return base.GetExplanationUnfinalized(req, numberSense);
+                pawn = corpse.InnerPawn;
             }
-
-            if (thing.def.IsCorpse)
+            var compPhysique = pawn?.compPhysique();
+            if (compPhysique?.HasPhysique == true)
             {
-                thing = (thing as Corpse)?.InnerPawn;
+                float value = Mathf.RoundToInt((0.7f * (compPhysique.BodyFat + compPhysique.MuscleMass)) - 20f);
+                string valueLine = "RB_Stat_BodyWeightOffset".Translate() + ": " + stat.ValueToString(value);
+                return $"{baseExpl}\n{valueLine}";
             }
-
-            var compPhysique = thing.TryGetComp<CompPhysique>();
-            if (compPhysique == null)
-            {
-                return base.GetExplanationUnfinalized(req, numberSense);
-            }
-
-            stringBuilder.AppendLine("RB_Stat_BodyWeightOffset".Translate() + ": " +
-                                     stat.ValueToString(Mathf.RoundToInt((0.7f * (compPhysique.BodyFat + compPhysique.MuscleMass)) - 20f)));
-            return $"{base.GetExplanationUnfinalized(req, numberSense)}\n{stringBuilder.ToString().TrimEndNewlines()}";
+            return baseExpl;
         }
     }
 }

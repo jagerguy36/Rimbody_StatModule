@@ -15,7 +15,7 @@ namespace Rimbody_StatModule
             if (__result != 0)
             {
                 var compPhysique = p.compPhysique();
-                if (compPhysique != null)
+                if (compPhysique?.HasPhysique == true)
                 {
                     __result += (compPhysique.brawn - 1f)*30f;
                 }
@@ -31,7 +31,7 @@ namespace Rimbody_StatModule
             if (__instance.Starving == true)
             {
                 var compPhysique = ___pawn.compPhysique();
-                if (compPhysique != null)
+                if (compPhysique?.HasPhysique == true)
                 {
                     __result = 0.0011325f * (1.2f - (0.7f * Mathf.Pow(compPhysique.BodyFat / 50, 2)));
                     return false;
@@ -47,7 +47,7 @@ namespace Rimbody_StatModule
         static void Postfix(ref float __result, Pawn ___pawn)
         {
             var compPhysique = ___pawn.compPhysique();
-            if (compPhysique?.MuscleMass >= 0 && compPhysique.BodyFat >= 0)
+            if (compPhysique?.HasPhysique == true)
             {
                 __result = __result * (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f));
             }
