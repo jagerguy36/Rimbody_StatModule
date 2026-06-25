@@ -43,10 +43,10 @@ namespace Rimbody_StatModule
         public static void Stringmaker(StringBuilder sb, Pawn p)
         {
             var compPhysique = p.compPhysique();
-            if (compPhysique != null && compPhysique.MuscleMass >= 0 && compPhysique.BodyFat >= 0)
+            if (compPhysique?.HasPhysique == true)
             {
-                sb.AppendLine("Body Composition: x " + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
-                 sb.AppendLine();
+                sb.AppendLine("RB_Stat_Composition".Translate() + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
+                sb.AppendLine();
             }
         }
     }
