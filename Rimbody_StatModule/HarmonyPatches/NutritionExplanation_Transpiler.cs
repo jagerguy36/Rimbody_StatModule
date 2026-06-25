@@ -5,7 +5,7 @@ using System.Text;
 using Maux36.Rimbody;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     [HarmonyPatch(typeof(RaceProperties), "NutritionEatenPerDayExplanation")]
     public static class NutritionExplanation_Transpiler
@@ -45,7 +45,7 @@ namespace Rimbody_StatModule
             var compPhysique = p.compPhysique();
             if (compPhysique?.HasPhysique == true)
             {
-                sb.AppendLine("RB_Stat_Composition".Translate() + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
+                sb.AppendLine("RB_Stat_Composition".Translate() + ": x" + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
                 sb.AppendLine();
             }
         }

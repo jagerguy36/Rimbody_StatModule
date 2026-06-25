@@ -5,5 +5,6 @@
   <RB_Stat_MuscleFatMult>Multiplier for muscle and fat: x</RB_Stat_MuscleFatMult>
   <RB_Stat_FatHinderanceMult>Multiplier for body fat: x</RB_Stat_FatHinderanceMult>
   <RB_Stat_MuscleFatTempOffset>Offset for muscle and fat: </RB_Stat_MuscleFatTempOffset>
-  <RB_Stat_Composition>Body Composition: x</RB_Stat_Composition>
+  <RB_Stat_Composition>Body Composition</RB_Stat_Composition>
+  <RB_Stat_Brawn_Offset>Muscle strength: </RB_Stat_Brawn_Offset>
 </LanguageData>

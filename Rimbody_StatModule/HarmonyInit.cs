@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
 using System;
 using System.Reflection;
+using Maux36.Rimbody;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     [StaticConstructorOnStartup]
     public static class HarmonyInit

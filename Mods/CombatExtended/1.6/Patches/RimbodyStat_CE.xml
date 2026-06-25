@@ -3,14 +3,14 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/StatDef[defName="CarryWeight"]</xpath>
 		<value>
-			<workerClass>CombatExtended.Rimbody_CarryWeight_StatWorker</workerClass>
+			<workerClass>Maux36.Rimbody_StatModule.Rimbody_CarryWeight_StatWorker</workerClass>
 		</value>
 	</Operation>
 
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/StatDef[defName = "CarryBulk"]</xpath>
 		<value>
-			<workerClass>CombatExtended.Rimbody_CarryBulk_StatWorker</workerClass>
+			<workerClass>Maux36.Rimbody_StatModule.Rimbody_CarryBulk_StatWorker</workerClass>
 		</value>
   </Operation>
 

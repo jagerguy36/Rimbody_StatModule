@@ -46,7 +46,7 @@
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/StatDef[defName="Mass"]</xpath>
         <value>
-          <workerClass>Rimbody_StatModule.StatWorker_Mass</workerClass>
+          <workerClass>Maux36.Rimbody_StatModule.StatWorker_Mass</workerClass>
         </value>
     </nomatch>
   </Operation>

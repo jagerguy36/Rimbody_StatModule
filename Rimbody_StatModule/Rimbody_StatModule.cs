@@ -2,7 +2,7 @@
 using System;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     public class Rimbody_StatModule : Mod
     {

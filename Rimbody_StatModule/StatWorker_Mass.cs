@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Text;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     public class StatWorker_Mass : StatWorker
     {
