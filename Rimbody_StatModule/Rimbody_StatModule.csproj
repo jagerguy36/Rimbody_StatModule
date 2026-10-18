@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.6\Assemblies\</OutputPath>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,16 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.3.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.2.3.6\lib\net48\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.4.2\lib\net48\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Rimbody">
-      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\Mods\DEV_Rimbody\1.6\Assemblies\Rimbody.dll</HintPath>
+      <HintPath>..\..\DEV_Rimbody\1.6\Assemblies\Rimbody.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,12 +53,14 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HarmonyInit.cs" />
+    <Compile Include="Brawn\Rimbody_CarryWeight_StatWorker.cs" />
+    <Compile Include="Brawn\Rimbody_CarryBulk_StatWorker.cs" />
     <Compile Include="HarmonyPatches\NutritionExplanation_Transpiler.cs" />
     <Compile Include="HarmonyPatches\StatHarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,19 +73,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo Cleaning old mod files...
-
-:: Delete the old mod files
-rd /s /q "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule"
-
-:: Copy the new files and folders
-xcopy /e /i /h /y "$(ProjectDir)..\1.5" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.5"
-xcopy /e /i /h /y "$(ProjectDir)..\1.6" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\1.6"
-xcopy /e /i /h /y "$(ProjectDir)..\About" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\About"
-copy /y "$(ProjectDir)..\LoadFolders.xml" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\LoadFolders.xml"
-xcopy /e /i /h /y "$(ProjectDir)..\Common" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\Common"
-xcopy /e /i /h /y "$(ProjectDir)..\Mods" "C:\Steam\steamapps\common\RimWorld\Mods\Rimbody - StatModule\Mods"
-echo Mod files have been successfully copied!
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

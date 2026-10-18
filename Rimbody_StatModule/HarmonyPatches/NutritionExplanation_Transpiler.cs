@@ -5,7 +5,7 @@ using System.Text;
 using Maux36.Rimbody;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     [HarmonyPatch(typeof(RaceProperties), "NutritionEatenPerDayExplanation")]
     public static class NutritionExplanation_Transpiler
@@ -31,7 +31,7 @@ namespace Rimbody_StatModule
             }
             else
             {
-                Log.Error("RimWorld C# Modding: Harmony Transpiler could not find target instruction in NutritionEatenPerDayExplanation.");
+                Log.Error("[Rimbody - StatModule] Harmony Transpiler could not find target instruction in NutritionEatenPerDayExplanation.");
             }
 
             return codes;
@@ -43,10 +43,10 @@ namespace Rimbody_StatModule
         public static void Stringmaker(StringBuilder sb, Pawn p)
         {
             var compPhysique = p.compPhysique();
-            if (compPhysique != null && compPhysique.MuscleMass >= 0 && compPhysique.BodyFat >= 0)
+            if (compPhysique?.HasPhysique == true)
             {
-                sb.AppendLine("Body Composition: x " + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
-                 sb.AppendLine();
+                sb.AppendLine("RB_Stat_Composition".Translate() + ": x" + (1f + ((compPhysique.MuscleMass + compPhysique.BodyFat - 50f) * 0.004f)).ToStringPercent());
+                sb.AppendLine();
             }
         }
     }

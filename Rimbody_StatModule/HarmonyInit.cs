@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
 using System;
 using System.Reflection;
+using Maux36.Rimbody;
 using Verse;
 
-namespace Rimbody_StatModule
+namespace Maux36.Rimbody_StatModule
 {
     [StaticConstructorOnStartup]
     public static class HarmonyInit
@@ -15,7 +16,11 @@ namespace Rimbody_StatModule
             {
                 Log.Message($"Rimbody StatModule Loaded");
                 harmony.PatchAllUncategorized(Assembly.GetExecutingAssembly());
-                if (!ModsConfig.IsActive("ceteam.combatextended"))
+                if (Rimbody_Utility.IsModActive("ceteam.combatextended"))
+                {
+                    Log.Message($"Rimbody StatModule detected CE.");
+                }
+                else
                 {
                     Log.Message($"Rimbody StatModule didn't detect CE.");
                     harmony.PatchCategory("NonCE");
