@@ -15,7 +15,7 @@ namespace Maux36.Rimbody_StatModule
             var compPhysique = pawn?.compPhysique();
             if (compPhysique?.HasPhysique == true)
             {
-                result += (compPhysique.brawn - 1f)*10f;
+                result += (compPhysique.brawn - 1f)*10f; //-5~10
                 result = Mathf.Max(0f, result);
             }
             return result;
