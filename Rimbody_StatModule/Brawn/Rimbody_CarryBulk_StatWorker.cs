@@ -10,15 +10,12 @@ namespace Maux36.Rimbody_StatModule
     {
         public override float GetBaseValueFor(StatRequest req)
         {
-            float result = base.GetBaseValueFor(req);
+            float result = base.GetBaseValueFor(req); //20
             Pawn pawn = req.Pawn ?? (req.Thing as Pawn);
             var compPhysique = pawn?.compPhysique();
             if (compPhysique?.HasPhysique == true)
-            {
-                result += (compPhysique.brawn - 1f)*10f; //-5~10
-                result = Mathf.Max(0f, result);
-            }
-            return result;
+                result *= compPhysique.brawn;
+            return result; // 10~40
         }
 
         public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
@@ -34,7 +31,7 @@ namespace Maux36.Rimbody_StatModule
                 if (compPhysique?.HasPhysique == true)
                 {
                     stringBuilder.AppendLine("RB_Stat_Composition".Translate());
-                    stringBuilder.AppendLine("    " + "RB_Stat_Brawn_Offset".Translate() + stat.ValueToString((compPhysique.brawn - 1f) * 10f, ToStringNumberSense.Offset));
+                    stringBuilder.AppendLine("    " + "RB_Stat_Brawn_Offset".Translate() + stat.ValueToString(compPhysique.brawn, ToStringNumberSense.Factor));
                 }
 
             }

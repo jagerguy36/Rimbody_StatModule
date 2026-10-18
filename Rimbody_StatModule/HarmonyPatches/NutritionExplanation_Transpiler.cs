@@ -31,7 +31,7 @@ namespace Maux36.Rimbody_StatModule
             }
             else
             {
-                Log.Error("RimWorld C# Modding: Harmony Transpiler could not find target instruction in NutritionEatenPerDayExplanation.");
+                Log.Error("[Rimbody - StatModule] Harmony Transpiler could not find target instruction in NutritionEatenPerDayExplanation.");
             }
 
             return codes;
