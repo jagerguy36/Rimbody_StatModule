@@ -6,7 +6,7 @@ namespace Maux36.Rimbody_StatModule
 {
     public class Rimbody_StatModule : Mod
     {
-        public const string CoreRequirement = "1.2.8";
+        public const string CoreRequirement = "1.2.13";
         public static string currentVersion;
         public Rimbody_StatModule(ModContentPack content) : base(content)
         {
